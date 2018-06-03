@@ -1,4 +1,4 @@
-# Calculadora Juros
+# Jogo da Forca
 Tarefa desenvolvida para o curso de Bacharel em Sistemas de Informação na disciplina introdução a desenvolvimento web.
 
 # Minimundo
