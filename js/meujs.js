@@ -1,7 +1,7 @@
 var min = Math.ceil(0);
 var max = Math.floor(3);
 var Aleatorio = Math.floor(Math.random() * (max - min)) + min;
-var dic = ["futebol", "casa","dia"]
+var dic = ["futebol", "escola","computador"]
 var forca = dic[Aleatorio]
 var count = 0;
 $(document).ready(function () {
@@ -16,16 +16,37 @@ $(document).ready(function () {
 });
 
 $('.submit').click(function () {
-    if (count > forca.length - 1) {
-        alert('Você perdeu!!!')
+    if (count > forca.length - 1 || count > 5) {
+        alert('Você perdeu!!!');
+        window.location.reload();
        
     } else {
-        if 
-            ($('[data-forca="' + $('.palava').val().toLowerCase() + '"]').length > 0)
+        if($('[data-forca="' + $('.palava').val().toLowerCase() + '"]').length > 0){
             $('[data-forca="' + $('.palava').val().toLowerCase() + '"]').val($('.palava').val())
-         else 
+            debugger;
+        }
+         else{
             count++;
+            
+            switch(count){
+                case 1:
+                $('.boneco').text('@');
+                break;
+                case 2:
+                $('.boneco').text('@-');
+                break;
+                case 3:
+                $('.boneco').text('@-<');
+                break;
+                case 4:
+                $('.boneco').text('@-<-');
+                break;
+                case 5:
+                $('.boneco').text('@-<-<');
+                break;
 
+            }
+            
+         } 
     }
-
 })
